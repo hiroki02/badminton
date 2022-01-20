@@ -10,7 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/rakets/{racket}', 'RacketController@show');
+Route::get('/', 'RacketController@index');
+Route::get('/rackets/create', 'RacketController@create');
+Auth::routes();
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/home', 'HomeController@index')->name('home');
