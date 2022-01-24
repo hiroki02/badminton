@@ -15,7 +15,16 @@ class GripsTableSeeder extends Seeder
     public function run()
     {
         DB::table('grips')->insert([
-            'name' => Str::random(20),
+            'name' => 'G7 75mm',
+        ]);
+        DB::table('grips')->insert([
+            'name' => 'G6 78mm',
+        ]);
+        DB::table('grips')->insert([
+            'name' => 'G5 81mm',
+        ]);
+        DB::table('grips')->insert([
+            'name' => 'G4 84mm',
         ]);
     }
 }

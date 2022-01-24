@@ -14,8 +14,15 @@ class TypesTableSeeder extends Seeder
      */
     public function run()
     {
+       
         DB::table('types')->insert([
-            'name' => Str::random(10),
+            'name' =>'ヘッドヘビー',
+        ]);
+         DB::table('types')->insert([
+            'name' =>'ヘッドライト',
+        ]); 
+        DB::table('types')->insert([
+            'name' =>'ヘッドイーブン',
         ]);
     }
 }
