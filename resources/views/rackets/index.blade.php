@@ -15,9 +15,13 @@
         [<a href='/rackets/create'>ラケット登録</a>]
             @foreach ($rackets as $racket)
                 <div class='racket'>
-                   <h2 class='name'>
+                    <h2 class='name'>
                         <a href="/rackets/{{ $racket->id }}">{{ $racket->name }}</a>
                     </h2>
+
+                    @if ($racket->image_path)
+                    <img src="{{ $racket->image_path }}">
+                    @endif
                     <a href="">{{ $racket->type->name }}</a>
                     <a href="">{{ $racket->weight->name }}</a>
                     <a href="">{{ $racket->grip->name }}</a>

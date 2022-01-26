@@ -9,8 +9,9 @@
     </head>
     <body>
         <h1>ラケット登録</h1>
-        <form action="/rackets" method="RACKET">
+        <form action="/rackets" method="post" enctype="multipart/form-data">
             @csrf
+            <input type="file" name="image">
             <div class="name">
                 <h2>ラケット名</h2>
                 <input type="text" name="racket[name]" placeholder="アークセイバー11プロ"/>

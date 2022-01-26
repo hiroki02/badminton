@@ -20,6 +20,7 @@ class RacketsTableSeeder extends Seeder
             'grip_id'=> 1,
             'weight_id'=> 1,
             'maker'=> Str::random(10),
+            'body'=> Str::random(10),
         ]);
     }
 }
