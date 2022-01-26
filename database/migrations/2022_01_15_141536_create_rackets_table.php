@@ -20,6 +20,8 @@ class CreateRacketsTable extends Migration
             $table->integer('weight_id')->unsigned();
             $table->integer('grip_id')->unsigned();
             $table->string('maker', 100);
+            $table->string('body', 2000);
+            $table->string('image_path')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
