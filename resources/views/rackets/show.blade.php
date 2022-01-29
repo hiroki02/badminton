@@ -15,10 +15,19 @@
         <h1 class="name">
             {{ $racket->name }}
         </h1>
+        <img src="{{ $racket->image_path }}">
         <div class="content">
             <div class="content__racket">
-                <h3>本文</h3>
-                <p>{{ $racket->maker }}</p>    
+                <h2>ラケットのタイプ</h2>
+                <p class='type_id'>{{ $racket->type->name}}</p>
+                <h2>ラケットの重さ</h2>
+                <p class='weight_id'>{{ $racket->weight->name }}</p>
+                <h3>グリップの重さ</h3>
+                <p class='grip_id'>{{ $racket->grip->name }}</p>
+                <h4>販売メーカー</h4>
+                <p class='maker'>{{ $racket->maker }}</p>
+                <h5>感想</h5>
+                <p>{{ $racket->body }}</p>    
             </div>
         </div>
         <div class="footer">
