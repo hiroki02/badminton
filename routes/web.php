@@ -14,6 +14,7 @@ Route::get('/rakets/{racket}', 'RacketController@show');
 Route::get('/', 'RacketController@index');
 Route::get('/rackets/create', 'RacketController@create');
 Route::post('/rackets', 'RacketController@store');
+Route::get('/rackets/{racket}', 'RacketController@show');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
