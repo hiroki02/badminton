@@ -1,5 +1,4 @@
 @extends('layouts.app')　　　　　　　　　　　　　　　　　　
-
 @section('content')
 <!DOCTYPE HTML>
 <html lang="{{ str_replace("_", "-", app()->getLocale()) }}">
@@ -22,7 +21,7 @@
                 <p class='type_id'>{{ $racket->type->name}}</p>
                 <h2>ラケットの重さ</h2>
                 <p class='weight_id'>{{ $racket->weight->name }}</p>
-                <h3>グリップの重さ</h3>
+                <h3>グリップの長さ</h3>
                 <p class='grip_id'>{{ $racket->grip->name }}</p>
                 <h4>販売メーカー</h4>
                 <p class='maker'>{{ $racket->maker }}</p>
@@ -34,5 +33,28 @@
             <a href="/">戻る</a>
         </div>
     </body>
+    
+    <h7>＜コメント＞</h7>
+    <ul>
+        @forelse ($racket->comments as $comment)
+        <li>{{ $comment->body }}</li>
+        @empty
+        <li>まだコメントはありません。</li>
+        @endforelse
+    </ul>
+    
+    <h8>コメント追加欄</h8>
+    <form method="post" action="{{ action('CommentController@store', $racket->id) }}">
+        {{ csrf_field() }}
+        <p>
+            <input type="text" name="body" placeholder="body" value="{{ old('body') }}">
+            @if ($errors->has('body'))
+            <span class="error">{{ $errors->first('body') }}</span>
+            @endif
+        </p>
+        <p>
+            <input type="submit" value="コメント追加">
+        </p>
+    </form>
 </html>
 @endsection
