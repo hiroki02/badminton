@@ -13,6 +13,9 @@
 Route::get('/', 'RacketController@index');
 Route::get('/rackets/create', 'RacketController@create');
 Route::get('/rackets/{racket}', 'RacketController@show');
+Route::get('/rackets/{racket}/edit', 'RacketController@edit');
+Route::put('/rackets/{racket}', 'RacketController@update');
+Route::delete('/rackets/{racket}', 'RacketController@delete');
 Route::post('/rackets', 'RacketController@store');
 Route::post('/rackets/{racket}/comments', 'CommentController@store');
 Auth::routes();

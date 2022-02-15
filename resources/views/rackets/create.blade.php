@@ -14,8 +14,7 @@
             <input type="file" name="image">
             <div class="name">
                 <h2>ラケット名</h2>
-                <input type="text" name="racket[name]" placeholder="アークセイバー11プロ" value="{{ old('racket.name') }}"/>
-                <p class="name__error" style="color:red">{{ $errors->first('racket.name') }}</p>
+                <input type="text" name="racket[name]" placeholder="アークセイバー11プロ"/>
             </div>
             <div class="type">
             <h2>Type</h2>
@@ -43,14 +42,12 @@
         </div>
             <div class="maker">
                 <h2>メーカー名</h2>
-                <input type="text" name="racket[maker]" placeholder="YONEX" value="{{ old('racket.maker') }}"/>
-                <p class="maker__error" style="color:red">{{ $errors->first('racket.maker') }}</p>
+                <input type="text" name="racket[maker]" placeholder="YONEX"/>
             </div>
 
             <div class="body">
                 <h2>使ってみた感想</h2>
-                <textarea name="racket[body]" placeholder="最高だった。">{{ old('racket.body') }}</textarea>
-                <p class="body__error" style="color:red">{{ $errors->first('racket.body') }}</p>
+                <textarea name="racket[body]" placeholder="最高だった。"></textarea>
             </div>
             <input type="submit" value="保存"/>
         </form>

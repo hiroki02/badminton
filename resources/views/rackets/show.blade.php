@@ -5,6 +5,12 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <p class="edit">[<a href="/rackets/{{ $racket->id }}/edit">編集画面へ</a>]</p>
+        <form action="/rackets/{{ $racket->id }}" id="form_{{ $racket->id }}" method="post" style="display:inline">
+            @csrf
+            @method('DELETE')
+            <button type="submit">削除する</button> 
+        </form>
         <title>Rackets</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
