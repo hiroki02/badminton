@@ -11,8 +11,16 @@
     </head>
     <body>
         <h1>ラケット管理アプリ</h1>
+        <h1>検索</h1>
+        <form action="{{url('/rackets')}}" method="GET">
+            <p><input type="text" name="keyword" value="{{$keyword}}"></p>
+            <p><input type="submit" value="検索"></p>
+        </form>
+        
+        
         <div class='rackets'>
         [<a href='/rackets/create'>ラケット登録</a>]
+            @if($rackets->count())
             @foreach ($rackets as $racket)
                 <div class='racket'>
                     <h2 class='name'>
@@ -31,9 +39,11 @@
                     <p class='maker'>{{ $racket->maker }}</p>
                 </div>
             @endforeach
+        @else
+        <p>見つかりませんでした。</p>
+        @endif
+
         </div>
-        <div class='paginate'>
-            {{ $rackets->links() }}
     </body>
 </html>
 @endsection
