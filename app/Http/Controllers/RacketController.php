@@ -17,10 +17,19 @@ class RacketController extends Controller
     }
     public function index(Racket $racket, Request $request)
     {
-        return view('rackets/index')->with(['rackets' => $racket->getPaginateByLimit()]); 
-        $rackets = Racket::all();
-        return view('rackets.index', ['rackets' => $rackets]);
+        // $rackets = Racket::all();
 
+        $keyword = $request->input('keyword');
+        $query = Racket::query();
+        
+        if (!empty($keyword)) {
+            $query->where('name', 'LIKE', "%{$keyword}%");
+        }
+        
+        $rackets = $query->get();
+
+        return view('rackets.index', ['rackets' => $rackets] , compact('rackets', 'keyword'));
+        // ->with(['rackets' => $racket->getPaginateByLimit()])
     }
     public function store(Request $request, Racket $racket)
     {

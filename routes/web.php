@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/rackets', 'RacketController@index');
 Route::get('/', 'RacketController@index');
 Route::get('/rackets/create', 'RacketController@create');
 Route::get('/rackets/{racket}', 'RacketController@show');
