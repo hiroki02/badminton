@@ -15,8 +15,9 @@ class CreateRacketsTable extends Migration
     {
         Schema::create('rackets', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name', 100);
+            $table->string('name', 100);            
             $table->integer('type_id')->unsigned(); 
+            $table->unsignedBigInteger('user_id'); 
             $table->integer('weight_id')->unsigned();
             $table->integer('grip_id')->unsigned();
             $table->string('maker', 100);
@@ -24,6 +25,11 @@ class CreateRacketsTable extends Migration
             $table->string('image_path')->nullable();
             $table->timestamps();
             $table->softDeletes();
+            
+            $table->foreign('user_id')
+            ->references('id')->on('users')
+            ->onDelete('cascade');
+
         });
     }
 

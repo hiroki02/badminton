@@ -3,6 +3,7 @@
 @section('content')
 <!DOCTYPE HTML>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    {{Auth::user()->name}}
     <head>
         <meta charset="utf-8">
         <title>ラケット管理</title>
