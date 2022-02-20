@@ -2,6 +2,7 @@
 @section('content')
 <!DOCTYPE HTML>
 <html lang="{{ str_replace("_", "-", app()->getLocale()) }}">
+    {{Auth::user()->name}}
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -44,18 +45,25 @@
     <ul>
         @forelse ($racket->comments as $comment)
         <li>{{ $comment->body }}</li>
+        <small>{{ $comment->user->name }}</small>
+        <p class="edit">[<a href="/comments/{{ $comment->id }}/edit">編集</a>]</p>
+        <form action="/comments/{{ $comment->id }}" id="form_{{ $comment->id }}" method="post" style="display:inline">
+        @csrf
+        @method('DELETE')
+        <button type="submit">delete</button> 
+    </form>
         @empty
         <li>まだコメントはありません。</li>
         @endforelse
     </ul>
     
     <h8>コメント追加欄</h8>
-    <form method="post" action="{{ action('CommentController@store', $racket->id) }}">
+    <form method = "post" action="{{ action('CommentController@store', $racket->id) }}">
         {{ csrf_field() }}
         <p>
             <input type="text" name="body" placeholder="body" value="{{ old('body') }}">
             @if ($errors->has('body'))
-            <span class="error">{{ $errors->first('body') }}</span>
+            <span class="error">{{ $errors->first('body') }}文章が記載されていません。</span>
             @endif
         </p>
         <p>

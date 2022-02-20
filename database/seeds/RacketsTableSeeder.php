@@ -16,6 +16,7 @@ class RacketsTableSeeder extends Seeder
     {
         DB::table('rackets')->insert([
             'name' => Str::random(10),
+            'user_id'=> 1,
             'type_id'=> 1,
             'grip_id'=> 1,
             'weight_id'=> 1,

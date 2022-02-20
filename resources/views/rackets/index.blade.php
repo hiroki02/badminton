@@ -3,6 +3,7 @@
 @section('content')
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    {{Auth::user()->name}}
     <head>
         <meta charset="utf-8">
         <title>ラケット管理アプリ</title>
@@ -13,7 +14,7 @@
         <h1>ラケット管理アプリ</h1>
         <h1>検索</h1>
         <form action="{{url('/rackets')}}" method="GET">
-            <p><input type="text" name="keyword" value="{{$keyword}}"></p>
+            <p><input type="text" name="keyword" value="{{ old('keyword', $keyword ?? '') }}"></p>
             <p><input type="submit" value="検索"></p>
         </form>
         
@@ -30,13 +31,14 @@
                     @if ($racket->image_path)
                     <img src="{{ $racket->image_path }}">
                     @endif
-                    <a href="">{{ $racket->type->name }}</a>
-                    <a href="">{{ $racket->weight->name }}</a>
-                    <a href="">{{ $racket->grip->name }}</a>
+                    <small>{{ $racket->user->name }}</small>
                     <p class='type_id'>{{ $racket->type->name}}</p>
                     <p class='weight_id'>{{ $racket->weight->name }}</p>
                     <p class='grip_id'>{{ $racket->grip->name }}</p>
                     <p class='maker'>{{ $racket->maker }}</p>
+                    <div class='paginate'>
+                    {{ $rackets->appends(['keyword' => $keyword ?? ''])->links() }}
+                    </div>
                 </div>
             @endforeach
         @else

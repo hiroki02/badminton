@@ -26,7 +26,7 @@ class RacketController extends Controller
             $query->where('name', 'LIKE', "%{$keyword}%");
         }
         
-        $rackets = $query->get();
+        $rackets = $query->paginate(5);;
 
         return view('rackets.index', ['rackets' => $rackets] , compact('rackets', 'keyword'));
         // ->with(['rackets' => $racket->getPaginateByLimit()])
@@ -34,6 +34,7 @@ class RacketController extends Controller
     public function store(Request $request, Racket $racket)
     {
         $input = $request['racket'];
+        $input += ['user_id' => $request->user()->id];
                 //s3アップロード開始
         $image = $request->file('image');
         // バケットの`myprefix`フォルダへアップロード
@@ -57,6 +58,7 @@ class RacketController extends Controller
     public function update(RacketRequest $request, Racket $racket)
     {
         $input_racket = $request['racket'];
+        $input_racket += ['user_id' => $request->user()->id];
         $racket->fill($input_racket)->save();
 
         return redirect('/rackets/' . $racket->id);
