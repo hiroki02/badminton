@@ -3,7 +3,7 @@
 
 主に自分のラケットや他の人のラケットを共有して、様々なラケットの良さを知ることが出来る。
 ## 使用言語・OS
-**php
+‐ php
 
 Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
