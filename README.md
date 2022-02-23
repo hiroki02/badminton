@@ -12,6 +12,7 @@
 ・Laravel（Ver 6.X）
 
 ・Bootstrap（Ver 4.0）
+
 OS
 
 ・AWS
@@ -20,11 +21,11 @@ DB
 
 ・MariaDB
 
-## Laravel Sponsors
+## 機能一覧
 
 We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-- **[Vehikl](https://vehikl.com/)**
+- **[Vehikl]**
 - **[Tighten Co.](https://tighten.co)**
 - **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
 - **[64 Robots](https://64robots.com)**
