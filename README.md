@@ -4,15 +4,11 @@
 主に自分のラケットや他の人のラケットを共有して、様々なラケットの良さを知ることが出来る。
 ## 使用言語・フレームワーク・OSなど
 言語
-
-・PHP
+- **PHP**
 
 フレームワーク
-
-・Laravel（Ver 6.X）
-
-・Bootstrap（Ver 4.0）
-
+- **Laravel（Ver 6.X)**
+- **Bootstrap（Ver 4.0）**
 OS
 
 ・AWS
