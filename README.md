@@ -4,20 +4,23 @@
 ## 使用言語・フレームワーク・OSなど
 言語
 - **PHP**
-- フレームワーク
+
+フレームワーク
 - **Laravel（Ver 6.X)**
 - **Bootstrap（Ver 4.0）**
-- OS
+
+OS
 - **AWS**
-- DB
+
+DB
 - **MariaDB**
 ## 機能一覧
 - ログイン機能
-- コメント機能（登録、編集、削除）
+- コメント機能（表示、登録、編集、削除）
 - ラケットの登録機能（画像はAWSのS3に保存）
 - キーワード検索機能
 - ラケットの詳細機能（ラケットの編集・削除）
-## Contributing
+## デモ
 
 Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
