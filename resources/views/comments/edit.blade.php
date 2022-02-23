@@ -3,7 +3,9 @@
 @section('content')
 <!DOCTYPE HTML>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    {{Auth::user()->name}}
+    <h2>
+        　　ユーザー　{{Auth::user()->name}}
+    </h2>
     <head>
         <meta charset="utf-8">
         <title>コメント</title>
@@ -13,13 +15,24 @@
     <div class="content">
         <form action="/comments/{{ $comment->id }}" method="POST">
             @csrf
-            @method('PUT')
-            <div class='content__body'>
-                <h2>コメント</h2>
-                <input type='text' name='comment[body]' value="{{ $comment->body }}">
-            </div>
-            <input type="submit" value="保存">
+            @method('PUT')        
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-6">
+                        <div class='content__body'>
+                            <h2>コメント</h2>
+                                <input type='text' name='comment[body]' value="{{ $comment->body }}">
+                        </div>
+                                <input type="submit" class="btn btn-primary" value="保存">
+                    </div>
         </form>
+                    <div class="col-6">
+                        <h2>
+                            <div class="back"><a href="/rackets/{{$comment->racket_id}}">戻る</a></div>
+                        </h2>
+                    </div>
+                </div>
+            </div>
     </div>
 </body>
 </html>

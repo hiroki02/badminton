@@ -4,7 +4,7 @@ namespace App\Http\Requests;//場所を示している
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class RacketRequest extends FormRequest
+class EditRequest extends FormRequest
 {
     /**
      * Get the validation rules that apply to the request.
@@ -15,7 +15,6 @@ class RacketRequest extends FormRequest
     {
         return [
             'racket.name' => 'required|string|max:100',
-            'image' => 'required',
             'racket.type_id' => 'required',
             'racket.weight_id' => 'required',
             'racket.grip_id' => 'required',

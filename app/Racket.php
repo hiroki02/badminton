@@ -8,6 +8,7 @@ class Racket extends Model
 {
     protected $fillable = [
         'name',
+        'image_path',
         'user_id',
         'type_id',
         'weight_id',
@@ -15,29 +16,29 @@ class Racket extends Model
         'maker',
         'body',
     ];
-    public function getPaginateByLimit(int $limit_count = 5)
-    {
-        // updated_atで降順に並べたあと、limitで件数制限をかける
-        return $this::with('user')->orderBy('updated_at', 'DESC')->paginate($limit_count);
-    }
     public function Type()   
     {
+        // ラケットのモデルとタイプのモデルが1対多(Inverse)の関係を築いている
         return $this->belongsTo('App\Type');  
     }
     public function Weight()   
     {
+        // ラケットのモデルと重さのモデルが1対多(Inverse)の関係を築いている
         return $this->belongsTo('App\Weight');  
     }
     public function Grip()   
-    {
+    {        
+        // ラケットのモデルとグリップのモデルが1対多(Inverse)の関係を築いている
         return $this->belongsTo('App\Grip');  
     }
     public function comments()
     {
+        // ラケットのモデルとコメントのモデルが1対多の関係を築いている
       return $this->hasMany('App\Comment');
     }
     public function user()
     {
+        // ラケットのモデルとユーザーのモデルが1対多(Inverse)の関係を築いている
         return $this->belongsTo('App\User');
     }
 }

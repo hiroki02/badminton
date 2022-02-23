@@ -37,12 +37,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
     
-    public function rackets()   
+    public function racket()   
     {
+         // ユーザーのモデルとラケットのモデルが1対多の関係を築いている
         return $this->hasMany('App\Racket');  
     }
     public function comments()   
     {
+        // ユーザーのモデルとコメントのモデルが1対多の関係を築いている
         return $this->hasMany('App\Comment');  
     }
 }
