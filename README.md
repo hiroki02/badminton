@@ -22,9 +22,12 @@ DB
 - ラケットの詳細機能（ラケットの編集・削除）
 ## デモ
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## リンク
+デプロイ先はherokuです。
 
-## Code of Conduct
+https://enigmatic-springs-74327.herokuapp.com/
+
+## 工夫した点
 
 In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
