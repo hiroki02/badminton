@@ -5,18 +5,13 @@
 ## 使用言語・フレームワーク・OSなど
 言語
 - **PHP**
-
 フレームワーク
 - **Laravel（Ver 6.X)**
 - **Bootstrap（Ver 4.0）**
 OS
-
-・AWS
-
+- **AWS**
 DB
-
-・MariaDB
-
+- **MariaDB**
 ## 機能一覧
 
 We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
