@@ -21,7 +21,8 @@ DB
 - キーワード検索機能
 - ラケットの詳細機能（ラケットの編集・削除）
 ## デモ
-![スクリーンショット (2019)](https://user-images.githubusercontent.com/88942066/155596666-c9e48481-580c-4244-9727-b80a27e1faa1.png)
+![スクリーンショット (2019)](https://user-images.githubusercontent.com/88942066/155597447-80892066-bae1-417e-b26f-16995a3fc686.png)
+
 
 ## リンク
 デプロイ先はherokuです。
