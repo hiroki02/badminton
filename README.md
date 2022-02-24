@@ -3,25 +3,26 @@
 - 主に自分のラケットや他の人のラケットを共有して、様々なラケットの良さを知ることが出来る。
 ## 使用言語・フレームワーク・OSなど
 言語
-- **PHP**
+- PHP
 
 フレームワーク
-- **Laravel（Ver 6.X)**
-- **Bootstrap（Ver 4.0）**
+- Laravel（Ver 6.x)
+- Bootstrap（Ver 4.0）
 
 OS
-- **AWS**
+- AWS
 
 DB
-- **MariaDB**
+- MariaDB
 ## 機能一覧
 - ログイン機能
 - コメント機能（表示、登録、編集、削除）
 - ラケットの登録機能（画像はAWSのS3に保存）
+- ラケットの一覧画面機能
 - キーワード検索機能
 - ラケットの詳細機能（ラケットの編集・削除）
 ## デモ
-![スクリーンショット (2019)](https://user-images.githubusercontent.com/88942066/155597447-80892066-bae1-417e-b26f-16995a3fc686.png)
+
 
 
 ## リンク
@@ -29,14 +30,10 @@ DB
 
 https://enigmatic-springs-74327.herokuapp.com/
 
-## 工夫した点
+## 注力した機能や工夫した点
+このアプリを作るうえで最も注力した機能はラケットの登録機能です。ラケットの名前やメーカーの情報をテキストに落とし込むだけでなく、ラケットのタイプ、重さ、グリップの長さのモデルをラケットにリレーションで結び付けることで選択するやり方を行い、ユーザーが打ち込む作業を減らして使いやすくなるようにした。そして、画像はAWSのS3を導入することで、セキュリティ性が高
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
+また、アプリケーションの機能の各画面にはグリッドを用いることで、表示させる項目を整理した。特にラケットの一覧画面と詳細画面は1行ごとに背景色を付けて縞模様にすることで分かりやすくした。
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+工夫した点はラケットやコメントのコントローラーの実行処理についての説明のコメントを細かく書いていくことで、誰でもどのような処理を行っているのか、またどのような機能を行っているのか分かるようにした。
