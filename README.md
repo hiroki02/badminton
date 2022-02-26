@@ -3,17 +3,17 @@
 - 主に自分のラケットや他の人のラケットを共有して、様々なラケットの良さを知ることが出来る。
 ## 使用言語・フレームワーク・OSなど
 言語
-- PHP
+- PHP(Ver 8.0.12)
 
 フレームワーク
-- Laravel（Ver 6.x)
+- Laravel（Ver 6.20.44)
 - Bootstrap（Ver 4.0）
 
 OS
-- AWS
+- Amazon Linux(Ver 2)
 
 DB
-- MariaDB
+- MariaDB(10.2.38)
 ## 機能一覧
 - ログイン機能
 - コメント機能（表示、登録、編集、削除）
